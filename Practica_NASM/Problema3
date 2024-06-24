@@ -1,0 +1,19 @@
+		;Determine	el enésimo término de la sucesión de Fibonacci
+		mov		R0, #8
+		mov		R1, #0
+		mov		R2, #1
+		
+fibonacci
+		cmp		R1, R0
+		beq		terminar ;cuando sean iguales termina el programa
+		add		R11, R2, R3
+		bne		cambiar
+		
+cambiar ;intercambio de valores
+		mov		R2, R3
+		mov		R3, R11
+		add		R1, R1, #1 ;aumenta 1
+		bal		fibonacci
+		
+terminar
+		end

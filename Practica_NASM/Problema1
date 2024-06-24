@@ -1,0 +1,46 @@
+				;Guarda	10 valores en memoria
+				mov		R1, #0x200
+				mov		R0, #25
+				str		R0, [R1, #0]
+				mov		R0, #67
+				str		R0, [R1, #4]
+				mov		R0, #94
+				str		R0, [R1, #8]
+				mov		R0, #23
+				str		R0, [R1, #12]
+				mov		R0, #78
+				str		R0, [R1, #16]
+				mov		R0, #6
+				str		R0, [R1, #20]
+				mov		R0, #54
+				str		R0, [R1, #24]
+				mov		R0, #46
+				str		R0, [R1, #28]
+				mov		R0, #3
+				str		R0, [R1, #32]
+				mov		R0, #100
+				str		R0, [R1, #36]
+				
+				;Determina	el valor más alto
+				mov		R2, #0x300
+				mov		R1, #0x200
+max
+				cmp		R1, #0x228
+				beq		terminar ;cuando sean iguales se termina el programa
+				ldr		R0, [R1]
+				cmp		R0, R7
+				bhi		encontrar_mayor
+				bne		aumento
+				
+encontrar_mayor
+				mov		R6, R1
+				mov		R7, R0
+				str		R7, [R2]
+				add		R2, R2, #4 ;aumenta 4
+				
+aumento
+				add		R1, R1, #4 ;aumenta 4
+				bal		max
+				
+terminar
+				end

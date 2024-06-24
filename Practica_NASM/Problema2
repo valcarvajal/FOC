@@ -1,0 +1,59 @@
+			;Guarda	10 valores en memoria
+			mov		R0, #36
+			mov		R2, #0x200
+			mov		R1, #70
+			str		R1, [R2, #0]
+			mov		R1, #55
+			str		R1, [R2, #4]
+			mov		R1, #36
+			str		R1, [R2, #8]
+			mov		R1, #100
+			str		R1, [R2, #12]
+			mov		R1, #74
+			str		R1, [R2, #16]
+			mov		R1, #28
+			str		R1, [R2, #20]
+			mov		R1, #6
+			str		R1, [R2, #24]
+			mov		R1, #10
+			str		R1, [R2, #28]
+			mov		R1, #32
+			str		R1, [R2, #32]
+			mov		R1, #99
+			str		R1, [R2, #36]
+
+			;Determina	valores mayores, menores o iguales a R0
+			mov		R3, #0x300
+			mov		R2, #0x200
+repatir
+			cmp		R2, #0x228
+			beq		terminar ;cuando sean iguales termina el programa
+			ldr		R1, [R2]
+			cmp		R1, R0
+			blo		nums_menores
+			bhi		nums_mayores
+			beq		nums_iguales
+			
+nums_mayores
+			mov		R9, R1
+			str		R9, [R3]
+			add		R3, R3, #4 ;aumenta 4
+			bne		aumento
+			
+nums_menores
+			mov		R7, R1
+			str		R7, [R3]
+			add		R3, R3, #4 ;aumenta 4
+			bne		aumento
+			
+nums_iguales
+			mov		R8, R1
+			str		R8, [R3]
+			add		R3, R3, #4 ;aumenta 4
+			
+aumento
+			add		R2, R2, #4 ;aumenta 4
+			bal		repatir
+			
+terminar
+			end

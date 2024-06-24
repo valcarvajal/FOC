@@ -1,0 +1,22 @@
+		;guarda 10 valores en memoria
+		mov		R1, #0x200
+		mov		R0, #69
+		str		R0, [R1, #0]
+		mov		R0, #64
+		str		R0, [R1, #4]
+		mov		R0, #12
+		str		R0, [R1, #8]
+		mov		R0, #3
+		str		R0, [R1, #12]
+		mov		R0, #58
+		str		R0, [R1, #16]
+		mov		R0, #100
+		str		R0, [R1, #20]
+		mov		R0, #7
+		str		R0, [R1, #24]
+		mov		R0, #91
+		str		R0, [R1, #28]
+		mov		R0, #22
+		str		R0, [R1, #32]
+		mov		R0, #45
+		str		R0, [R1, #36]
